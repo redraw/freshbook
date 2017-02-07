@@ -23,30 +23,30 @@ Freshbooks hours logger tool
 Installation
 ----
 
-:code:`$ pip install git+https://github.com/redraw/freshbook`
+``$ pip install git+https://github.com/redraw/freshbook``
 
 Use
 ----
 
 First, create the config file by running
 
-:code:`$freshbook init`
+``$ freshbook init``
 
-This creates a file named `.freshbook` in the current project directory. When you're ready to log, make sure you're on the same directory where you have the config file and run,
+This creates a file named ``.freshbook`` in the current project directory. When you're ready to log, make sure you're on the same directory where you have the config file and run,
 
-:code:`$ freshbook commit -m "yolo!"`
+``$ freshbook commit -m "some magic!"``
 
 Git
 ----
 
 If using git, you could use your commit messages to include in the freshbook notes.
 
-Something like `git log --author `git config user.name` --since 6am --all --no-merges --format='- %s'`
+Something like ``git log --author `git config user.name` --since 6am --all --no-merges --format='- %s'``
 
 You could make that a git alias,
 
-:code:`$ git config --global alias.today "log --author '`git config user.name`' --since 6am --all --no-merges --format='- %s'"`
+``$ git config --global alias.today "log --author '`git config user.name`' --since 6am --all --no-merges --format='-%s'"``
 
 And then just do,
 
-:code:`$ freshbook commit -m $(git today)`
+``$ freshbook commit -m $(git today)``
