@@ -23,7 +23,7 @@ Freshbooks hours logger tool
 Installation
 ----
 
-``$ pip install git+https://github.com/redraw/freshbook``
+``$ pip install freshbook``
 
 Use
 ----

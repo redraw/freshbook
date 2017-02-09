@@ -10,8 +10,9 @@ with open('HISTORY.rst') as history_file:
     history = history_file.read()
 
 requirements = [
-    'docopt==0.6.2',
-    'six==1.10.0',
+    'docopt',
+    'six',
+    'requests',
     'refreshbooks==2.0'
 ]
 
