@@ -2,6 +2,6 @@
 
 __author__ = """agustin"""
 __email__ = 'agustinbv@gmail.com'
-__version__ = '0.1.0'
+__version__ = '0.1.1'
 
 from .freshbook import Freshbook

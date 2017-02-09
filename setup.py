@@ -22,7 +22,7 @@ test_requirements = [
 
 setup(
     name='freshbook',
-    version='0.1.0',
+    version='0.1.1',
     description="Freshbooks hours logger tool",
     long_description=readme + '\n\n' + history,
     author="agustin",
