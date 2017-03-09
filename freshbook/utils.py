@@ -15,7 +15,7 @@ class SetupConfig(object):
     PATH = '.freshbook'
 
     def __init__(self):
-        self.account = input('> Account URL: ')
+        self.account = input('> Account URL (without https://): ')
         self.token = input('> Token: ')
 
         self.fb = Freshbook(self.account, self.token)
