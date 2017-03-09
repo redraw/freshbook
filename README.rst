@@ -49,4 +49,4 @@ You could make that a git alias,
 
 And then just do,
 
-``$ freshbook commit -m $(git today)``
+``$ freshbook commit -m "$(git today)"``
