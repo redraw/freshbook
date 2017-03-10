@@ -1,5 +1,6 @@
 from __future__ import print_function
 
+import os
 import json
 from six.moves import input
 from collections import namedtuple
@@ -12,10 +13,10 @@ Option = namedtuple('Option', 'id name')
 
 class SetupConfig(object):
 
-    PATH = '.freshbook'
+    PATH = os.path.join(os.getcwd(), '.freshbook')
 
     def __init__(self):
-        self.account = input('> Account URL (without https://): ')
+        self.account = input('> Account domain (<project>.freshbooks.com): ')
         self.token = input('> Token: ')
 
         self.fb = Freshbook(self.account, self.token)
@@ -39,7 +40,7 @@ class SetupConfig(object):
     @staticmethod
     def _select(options):
         for i, option in enumerate(options):
-            print('['+str(i)+']', option.name)
+            print('[%s]' % i, option.name)
 
         while True:
             value = input('> Select: ') or -1

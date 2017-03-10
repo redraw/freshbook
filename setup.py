@@ -22,10 +22,10 @@ test_requirements = [
 
 setup(
     name='freshbook',
-    version='0.1.1',
+    version='0.1.2',
     description="Freshbooks hours logger tool",
     long_description=readme + '\n\n' + history,
-    author="agustin",
+    author="redraw",
     author_email='agustinbv@gmail.com',
     url='https://github.com/redraw/freshbook',
     packages=[

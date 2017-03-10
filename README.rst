@@ -32,21 +32,17 @@ First, create the config file by running
 
 ``$ freshbook init``
 
-This creates a file named ``.freshbook`` in the current project directory. When you're ready to log, make sure you're on the same directory where you have the config file and run,
+This creates a file named ``.freshbook`` in the current project directory. When you're ready to log, make sure you're on the same directory and run,
 
-``$ freshbook commit -m "some magic!"``
+``$ freshbook commit -m "the message"``
 
 Git
 ----
 
 If using git, you could use your commit messages to include in the freshbook notes.
 
-Something like ``git log --author `git config user.name` --since 6am --all --no-merges --format='- %s'``
-
-You could make that a git alias,
-
 ``$ git config --global alias.today "log --author '`git config user.name`' --since 6am --all --no-merges --format='-%s'"``
 
-And then just do,
+And then just do
 
 ``$ freshbook commit -m "$(git today)"``

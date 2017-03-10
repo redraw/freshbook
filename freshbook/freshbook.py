@@ -16,10 +16,34 @@ class Freshbook(object):
         return [t for t in response.tasks.task]
 
     def commit(self, project_id, task_id, **kwargs):
-        return self.client.time_entry.create(
+        response = self.client.time_entry.create(
             time_entry=dict(
                 project_id=project_id,
                 task_id=task_id,
                 **kwargs
             )
         )
+        return response.get('status')
+
+    def list(self, project_id, task_id, date_from=None, date_to=None):
+        payload = dict(
+            project_id=project_id,
+            task_id=task_id,
+            date_from=date_from,
+            date_to=date_to
+        )
+
+        response = self.client.time_entry.list(**payload)
+
+        while True:
+            for entry in response.time_entries.time_entry:
+                yield entry
+
+            page = response.time_entries.get('page')
+            pages = response.time_entries.get('pages')
+
+            if int(page) == int(pages):
+                break
+
+            payload['page'] = int(page) + 1
+            response = self.client.time_entry.list(**payload)
