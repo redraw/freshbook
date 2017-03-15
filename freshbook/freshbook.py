@@ -34,6 +34,10 @@ class Freshbook(object):
         )
 
         response = self.client.time_entry.list(**payload)
+        total = response.time_entries.get('total')
+
+        if int(total) == 0:
+            raise StopIteration
 
         while True:
             for entry in response.time_entries.time_entry:
@@ -43,7 +47,7 @@ class Freshbook(object):
             pages = response.time_entries.get('pages')
 
             if int(page) == int(pages):
-                break
+                raise StopIteration
 
             payload['page'] = int(page) + 1
             response = self.client.time_entry.list(**payload)

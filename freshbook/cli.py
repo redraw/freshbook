@@ -70,7 +70,8 @@ def main():
         for entry in entries:
             print("[%s]" % entry.date)
             print(entry.notes)
-            print(flush=True)
+            print()
+            sys.stdout.flush()
 
 
 if __name__ == '__main__':
